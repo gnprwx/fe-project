@@ -2,4 +2,6 @@
 
 ### First Milestone: Make a "tv" the user can watch and change channels on.
 
-- [] If first milestone is complete, consider making it a 'terminal' style experience.
+- [ ] If first milestone is complete, consider making it a 'terminal' style experience.
+
+### Second milestone: Add random user login with random user API.
