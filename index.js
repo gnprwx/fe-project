@@ -1,9 +1,10 @@
 const gif = document.querySelector("#station");
 const terminal = document.querySelector("#terminal");
-
+const GKEY = 'msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm';
 let tvStatus = false;
 
 terminal.addEventListener("keydown", (event) => {
+    //! MOVE COMMANDS TO SEPARATE FUNCTION
     if (event.key === "Enter") {
         let userInput = terminal.value.toLowerCase();
         if (userInput === "on" && tvStatus) {
@@ -31,7 +32,7 @@ terminal.addEventListener("keydown", (event) => {
 
 function tvChannels() {
     fetch(
-        "https://api.giphy.com/v1/gifs/random?api_key=msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm&tag=vaporwave&rating=g"
+        `https://api.giphy.com/v1/gifs/random?api_key=${GKEY}&tag=vaporwave&rating=g`
     )
         .then((response) => {
             return response.json();
