@@ -1,7 +1,13 @@
-# My front-end project.
+# Front-end project.
 
 ### First Milestone: Make a "tv" the user can watch and change channels on.
 - [x] First milestone complete.
 - [x] Make it a 'terminal' style experience.
 
-### Second milestone: Add random user login with random user API.
+### Second milestone: Add weather.
+- [x] Accessible through terminal command 'weather'.
+- [x] Weather 'widget' available after using 'weather' command.
+
+### Miscellaneous 
+- [ ] Add 'tldr' for command list.
+- [ ] Maybe third API?
