@@ -11,7 +11,7 @@ terminal.addEventListener("keydown", (event) => {
                 terminal.placeholder = "";
             }, 2000);
             terminal.placeholder = "TV is already on, dude.";
-        } else {
+        } else if (userInput === "on" && !tvStatus) {
             terminal.placeholder = "'change' the channels";
             tvStatus = true;
             tvChannels();
