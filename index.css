@@ -1,11 +1,12 @@
-/* Box sizing rules */
+:root {
+    --text-color:  rgb(240, 187, 72)
+}
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* Prevent font size inflation */
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
@@ -39,21 +40,22 @@ button,
 textarea,
 select {
     font: inherit;
-    color: lightgreen;
+    color: var(--text-color);
 }
 #station {
     position: relative;
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    background-position: center;
+    background-position: top;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 #tv {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url(./img/tv_main.png);
+    background-image: url(./img/tv.png);
     background-size: cover;
     background-position: top;
 }
@@ -68,8 +70,8 @@ select {
 }
 #terminal {
     position: absolute;
-    border: 2px solid lightgreen;
-    text-shadow: 0 0 5px lightgreen;
+    border: 2px solid var(--text-color);
+    text-shadow: 0 0 5px  var(--text-color);
     font-size: 1.3rem;
     bottom: 0px;
     padding: 10px;
@@ -81,5 +83,5 @@ select {
     outline: none;
 }
 ::placeholder {
-    color: lightgreen;
+    color: var(--text-color);
 }
