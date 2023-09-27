@@ -15,7 +15,7 @@ html {
 body {
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: #111;
     height: 100vh;
     line-height: 1.5;
@@ -42,11 +42,12 @@ select {
     color: lightgreen;
 }
 #station {
+    position: relative;
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    background-position: bottom;
-    background-size: 35%;
+    background-position: center;
+    background-size: contain;
 }
 #tv {
     position: relative;
@@ -56,13 +57,23 @@ select {
     background-size: cover;
     background-position: top;
 }
+.wIcon{
+    display: none;
+}
+.widget {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 10px;
+}
 #terminal {
     position: absolute;
     border: 2px solid lightgreen;
     text-shadow: 0 0 5px lightgreen;
+    font-size: 1.3rem;
     bottom: 0px;
     padding: 10px;
-    height: 30px;
+    height: 60px;
     width: 100%;
     background-color: black;
 }
