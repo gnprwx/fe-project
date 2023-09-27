@@ -48,7 +48,7 @@ select {
     width: 100%;
     height: 100%;
     background-position: top;
-    background-size: contain;
+    background-size: 1300px;
     background-repeat: no-repeat;
 }
 #tv {
