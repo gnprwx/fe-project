@@ -1,7 +1,7 @@
 const gif = document.querySelector("#station");
 const terminal = document.querySelector("#terminal");
-const icon = document.createElement('img');
-icon.className = 'wIcon';
+const icon = document.createElement("img");
+icon.className = "wIcon";
 gif.appendChild(icon);
 
 const GKEY = "msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm";
@@ -17,15 +17,17 @@ terminal.addEventListener("keydown", (event) => {
 
 function commandRouting() {
     let userInput = terminal.value.toLowerCase();
-    if (userInput === "on" && tvStatus) {
-        setTimeout(() => {
-            terminal.placeholder = "";
-        }, 2000);
-        terminal.placeholder = "TV is already on, dude.";
-    } else if (userInput === "on" && !tvStatus) {
-        terminal.placeholder = "'change' the channels";
-        tvStatus = true;
-        tvChannels();
+    if (userInput === "on") {
+        if (tvStatus) {
+            setTimeout(() => {
+                terminal.placeholder = "";
+            }, 2000);
+            terminal.placeholder = "TV is already on, dude.";
+        } else {
+            terminal.placeholder = "'change' the channels";
+            tvStatus = true;
+            tvChannels();
+        }
     }
     if (userInput === "change" && tvStatus) {
         terminal.placeholder = "";
@@ -39,10 +41,10 @@ function commandRouting() {
     if (userInput === "weather") {
         currentWeather();
     }
-    if (userInput === 'widget') {
+    if (userInput === "widget") {
         terminal.placeholder = "";
-        icon.classList.toggle('widget');
-        icon.classList.toggle('wIcon');
+        icon.classList.toggle("widget");
+        icon.classList.toggle("wIcon");
     }
     terminal.value = "";
 }
@@ -67,7 +69,12 @@ function currentWeather() {
             return response.json();
         })
         .then((data) => {
-            icon.src = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
-            terminal.placeholder = `Weather in paradise is currently ${Math.round(data.main.temp)}°F with ${data.weather[0].description}.`
+            icon.src =
+                "http://openweathermap.org/img/w/" +
+                data.weather[0].icon +
+                ".png";
+            terminal.placeholder = `Weather in paradise is currently ${Math.round(
+                data.main.temp
+            )}°F with ${data.weather[0].description}.`;
         });
 }
