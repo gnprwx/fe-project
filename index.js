@@ -9,17 +9,15 @@ temp.className = "tIcon";
 gif.appendChild(icon);
 gif.appendChild(temp);
 
-const GKEY = "msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm";
-const WKEY = "eafc929406722a97ee0c5f953c3bdf13";
-
-let tvStatus = false;
-let weather = false;
-
 terminal.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         commandRouting();
     }
+    return;
 });
+
+let tvStatus = false;
+let weather = false;
 
 function commandRouting() {
     let userInput = terminal.value.toLowerCase();
@@ -59,6 +57,7 @@ function commandRouting() {
 }
 
 function tvChannels() {
+    const GKEY = "msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm";
     fetch(
         `https://api.giphy.com/v1/gifs/random?api_key=${GKEY}&tag=vaporwave&rating=g`
     )
@@ -71,6 +70,7 @@ function tvChannels() {
 }
 
 function currentWeather() {
+    const WKEY = "eafc929406722a97ee0c5f953c3bdf13";
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=21.30&lon=-157.85&appid=${WKEY}&units=imperial`
     )
