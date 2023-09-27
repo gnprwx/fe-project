@@ -1,13 +1,19 @@
 const gif = document.querySelector("#station");
 const terminal = document.querySelector("#terminal");
 const icon = document.createElement("img");
+const temp = document.createElement("span");
+
 icon.className = "wIcon";
+temp.className = "tIcon";
+
 gif.appendChild(icon);
+gif.appendChild(temp);
 
 const GKEY = "msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm";
 const WKEY = "eafc929406722a97ee0c5f953c3bdf13";
 
 let tvStatus = false;
+let weather = false;
 
 terminal.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
@@ -40,9 +46,12 @@ function commandRouting() {
     }
     if (userInput === "weather") {
         currentWeather();
+        weather = true;
     }
-    if (userInput === "widget") {
+    if (userInput === "widget" && weather) {
         terminal.placeholder = "";
+        temp.classList.toggle('temp');
+        temp.classList.toggle('tIcon');
         icon.classList.toggle("widget");
         icon.classList.toggle("wIcon");
     }
@@ -73,6 +82,7 @@ function currentWeather() {
                 "http://openweathermap.org/img/w/" +
                 data.weather[0].icon +
                 ".png";
+            temp.textContent = `${Math.round(data.main.temp)}°F`;
             terminal.placeholder = `Weather in paradise is currently ${Math.round(
                 data.main.temp
             )}°F with ${data.weather[0].description}.`;
