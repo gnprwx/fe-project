@@ -1,5 +1,5 @@
 :root {
-    --text-color:  rgb(240, 187, 72)
+    --text-color: rgb(240, 187, 72);
 }
 *,
 *::before,
@@ -50,6 +50,7 @@ select {
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
+    transition: 300ms;
 }
 #tv {
     position: relative;
@@ -58,11 +59,12 @@ select {
     background-image: url(./img/tv.png);
     background-size: cover;
     background-position: top;
+    transform: 1s;
 }
-.wIcon{
+.wIcon {
     display: none;
 }
-.tIcon{
+.tIcon {
     display: none;
 }
 .temp {
@@ -82,7 +84,7 @@ select {
 #terminal {
     position: absolute;
     border: 2px solid var(--text-color);
-    text-shadow: 0 0 5px  var(--text-color);
+    text-shadow: 0 0 5px var(--text-color);
     font-size: 1.3rem;
     bottom: 0px;
     padding: 10px;
