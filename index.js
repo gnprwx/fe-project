@@ -76,7 +76,7 @@ function tvOn() {
         setTimeout(() => {
             terminal.placeholder = "";
         }, 2000);
-        terminal.placeholder = "TV is already on, dude.";
+        terminal.placeholder = "TV is already on, yo.";
         return;
     } else {
         terminal.placeholder = "'change' the channels";
