@@ -1,5 +1,16 @@
 # Front-end project.
 
+| Commands  | Description |
+| ---       | ---         |
+| "on"      | turns on tv |
+| "off"     | turns off tv |
+| "change"  | changes channels |
+| "screen"  | toggles between "full screen" and tv screen |
+| "weather" | displays weather in "paradise" |
+| "widget"  | displays persisting short-form of weather in "console" |
+| "tldr"    | displays all commands |
+| "clear"   | clears persisting placeholder text |
+
 ### First Milestone: Make a "tv" the user can watch and change channels on.
 - [x] First milestone complete.
 - [x] Make it a 'terminal' style experience.
@@ -9,5 +20,6 @@
 - [x] Weather 'widget' available after using 'weather' command.
 
 ### Miscellaneous 
-- [ ] Add 'tldr' for command list.
+- [x] Add 'tldr' for command list.
+- [x] Additional commands added
 - [ ] Maybe third API?
