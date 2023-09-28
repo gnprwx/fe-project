@@ -49,7 +49,6 @@ select {
     height: 100%;
     background-position: top;
     background-size: contain;
-    background-repeat: no-repeat;
     transition: 300ms;
 }
 #tv {
