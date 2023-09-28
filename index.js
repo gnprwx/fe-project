@@ -122,7 +122,7 @@ function weatherWidget() {
 function tvChannels() {
     const GKEY = "msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm";
     fetch(
-        `https://api.giphy.com/v1/gifs/random?api_key=${GKEY}&tag=vaporwave&rating=g`
+        `https://api.giphy.com/v1/gifs/random?api_key=${GKEY}&tag=vaporwave&rating=pg-13`
     )
         .then((response) => {
             return response.json();
