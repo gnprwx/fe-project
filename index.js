@@ -17,6 +17,7 @@ const commands = [
     "screen",
     "weather",
     "widget",
+    "joke",
     "tldr",
     "clear",
 ];
@@ -37,10 +38,14 @@ terminal.addEventListener("keydown", (event) => {
                 tvOff();
                 break;
             case commands[2]:
-                tvStatus ? tvChannels() : null;
+                tvStatus
+                    ? tvChannels()
+                    : (terminal.placeholder = `Turn on the TV...`);
                 break;
             case commands[3]:
-                tvStatus ? screenSize() : null;
+                tvStatus
+                    ? screenSize()
+                    : (terminal.placeholder = `Turn on the TV...`);
                 break;
             case commands[4]:
                 currentWeather();
@@ -50,9 +55,12 @@ terminal.addEventListener("keydown", (event) => {
                 weatherWidget();
                 break;
             case commands[6]:
-                terminal.placeholder = `commands: ${commands.join(" | ")}`;
+                jokes();
                 break;
             case commands[7]:
+                terminal.placeholder = `commands: ${commands.join(" | ")}`;
+                break;
+            case commands[8]:
                 terminal.placeholder = "";
                 break;
         }
@@ -141,5 +149,15 @@ function currentWeather() {
             terminal.placeholder = `Weather in paradise is currently ${Math.round(
                 data.main.temp
             )}°F with ${data.weather[0].description}.`;
+        });
+}
+
+function jokes() {
+    fetch(`https://v2.jokeapi.dev/joke/Programming?type=twopart`)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            terminal.placeholder = `${data.setup} ${data.delivery}`;
         });
 }
