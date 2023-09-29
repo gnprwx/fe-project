@@ -26,44 +26,11 @@ let tvStatus = false;
 let weather = false;
 let full = false;
 
-//? command routing
+//? terminal-like input functionality
 terminal.addEventListener("keydown", (event) => {
-    let userInput = terminal.value.toLowerCase();
+    const userInput = terminal.value.toLowerCase();
     if (commands.includes(userInput) && event.key === "Enter") {
-        switch (userInput) {
-            case commands[0]:
-                tvOn();
-                break;
-            case commands[1]:
-                tvOff();
-                break;
-            case commands[2]:
-                tvStatus
-                    ? tvChannels()
-                    : (terminal.placeholder = `Turn on the TV...`);
-                break;
-            case commands[3]:
-                tvStatus
-                    ? screenSize()
-                    : (terminal.placeholder = `Turn on the TV...`);
-                break;
-            case commands[4]:
-                currentWeather();
-                weather = true;
-                break;
-            case commands[5]:
-                weatherWidget();
-                break;
-            case commands[6]:
-                jokes();
-                break;
-            case commands[7]:
-                terminal.placeholder = `commands: ${commands.join(" | ")}`;
-                break;
-            case commands[8]:
-                terminal.placeholder = "";
-                break;
-        }
+        commandRouting();
         terminal.value = "";
     }
     return;
@@ -118,7 +85,46 @@ function weatherWidget() {
     }
 }
 
-//? API CALLS
+//? terminal command routing
+function commandRouting() {
+    const userInput = terminal.value.toLowerCase();
+    switch (commands.indexOf(userInput)) {
+        case 0:
+            tvOn();
+            break;
+        case 1:
+            tvOff();
+            break;
+        case 2:
+            tvStatus
+                ? tvChannels()
+                : (terminal.placeholder = `Turn on the TV...`);
+            break;
+        case 3:
+            tvStatus
+                ? screenSize()
+                : (terminal.placeholder = `Turn on the TV...`);
+            break;
+        case 4:
+            currentWeather();
+            weather = true;
+            break;
+        case 5:
+            weatherWidget();
+            break;
+        case 6:
+            jokes();
+            break;
+        case 7:
+            terminal.placeholder = `commands: ${commands.join(" | ")}`;
+            break;
+        case 8:
+            terminal.placeholder = "";
+            break;
+    }
+ }
+
+//? API calls
 function tvChannels() {
     const GKEY = "msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm";
     fetch(
