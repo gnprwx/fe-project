@@ -29,3 +29,5 @@ You can watch "tv", check the weather in hawaii to remind yourself to book that 
 - [x] Additional commands added
 - [x] Maybe third API? 'Joke' command?
 - [x] Add another box to check to make it seem like I'm productive.
+
+### [Download write-up](https://github.com/selfdivision/fe-project/raw/main/write-up.odt)
