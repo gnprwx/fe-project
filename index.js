@@ -1,13 +1,13 @@
 const station = document.querySelector("#station");
 const tv = document.querySelector("#tv");
 const terminal = document.querySelector("#terminal");
-const icon = document.createElement("img");
+const weatherIcon = document.createElement("img");
 const temp = document.createElement("span");
 
-icon.className = "wIcon";
-temp.className = "tIcon";
+weatherIcon.className = "weather-hidden";
+temp.className = "temp-hidden";
 
-station.appendChild(icon);
+station.appendChild(weatherIcon);
 station.appendChild(temp);
 
 const commands = [
@@ -73,9 +73,9 @@ function screenSize() {
 function weatherWidget() {
     if (weather) {
         temp.classList.toggle("temp");
-        temp.classList.toggle("tIcon");
-        icon.classList.toggle("widget");
-        icon.classList.toggle("wIcon");
+        temp.classList.toggle("temp-hidden");
+        weatherIcon.classList.toggle("weather");
+        weatherIcon.classList.toggle("weather-hidden");
     } else {
         terminal.value = "";
         setTimeout(() => {
@@ -122,11 +122,11 @@ function commandRouting() {
             terminal.placeholder = "";
             break;
     }
- }
+}
 
 //? API calls
 function tvChannels() {
-    const GKEY = "msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm";
+    const GKEY = "msOvtkTOZjU8s7HA4BfHaOxZ2cTejHYm"; //! don't do this with real production code.
     fetch(
         `https://api.giphy.com/v1/gifs/random?api_key=${GKEY}&tag=vaporwave&rating=pg-13`
     )
@@ -139,7 +139,7 @@ function tvChannels() {
 }
 
 function currentWeather() {
-    const WKEY = "eafc929406722a97ee0c5f953c3bdf13";
+    const WKEY = "eafc929406722a97ee0c5f953c3bdf13"; //! don't do this with real production code.
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=21.30&lon=-157.85&appid=${WKEY}&units=imperial`
     )
@@ -147,10 +147,7 @@ function currentWeather() {
             return response.json();
         })
         .then((data) => {
-            icon.src =
-                "http://openweathermap.org/img/w/" +
-                data.weather[0].icon +
-                ".png";
+            weatherIcon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
             temp.textContent = `${Math.round(data.main.temp)}°F`;
             terminal.placeholder = `Weather in paradise is currently ${Math.round(
                 data.main.temp

@@ -60,10 +60,10 @@ select {
     background-position: top;
     transform: 1s;
 }
-.wIcon {
+.weather-hidden {
     display: none;
 }
-.tIcon {
+.temp-hidden {
     display: none;
 }
 .temp {
@@ -74,7 +74,7 @@ select {
     text-shadow: 0 0 5px var(--text-color);
     font-size: 1.3rem;
 }
-.widget {
+.weather {
     position: absolute;
     bottom: 2px;
     right: 0px;
