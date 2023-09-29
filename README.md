@@ -1,5 +1,5 @@
 # Front-end project.
-## What is this "project"?
+### What is this "project"?
 It's a website.
 ### Oh, ok. What can you do on it?
 You can watch "tv", check the weather in hawaii to remind yourself to book that vacation you've been putting off, and enjoy some programming humor. All from the comfort of the built-in "terminal".
@@ -28,4 +28,4 @@ You can watch "tv", check the weather in hawaii to remind yourself to book that 
 - [x] Add 'tldr' for command list.
 - [x] Additional commands added
 - [x] Maybe third API? 'Joke' command?
-- [x] Add another box to check to make it seem like you're productive.
+- [x] Add another box to check to make it seem like I'm productive.
