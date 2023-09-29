@@ -1,4 +1,8 @@
 # Front-end project.
+## What is this "project"?
+It's a website.
+### Oh, ok. What can you do on it?
+You can watch "tv", check the weather in hawaii to remind yourself to book that vacation you've been putting off, and enjoy some programming humor. All from the comfort of the built-in "terminal".
 ### How to use the console
 | Commands  | Description |
 | ---       | ---         |
@@ -8,6 +12,7 @@
 | screen    | toggles between "full screen" and tv screen |
 | weather   | displays weather in "paradise" |
 | widget    | displays persisting short-form of weather in "console" |
+| joke      | displays a programming joke |
 | tldr      | displays all commands |
 | clear     | clears persisting placeholder text |
 
@@ -19,7 +24,8 @@
 - [x] Accessible through terminal command 'weather'.
 - [x] Weather 'widget' available after using 'weather' command.
 
-### Miscellaneous 
+### More milestones
 - [x] Add 'tldr' for command list.
 - [x] Additional commands added
-- [ ] Maybe third API? 'Joke' command?
+- [x] Maybe third API? 'Joke' command?
+- [x] Add another box to check to make it seem like you're productive.
